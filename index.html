@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Just do it!</title>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <style>
+      #quote {
+        font-family: helvetica,arial;
+        font-size: 80px;
+        line-height: 1.2em;
+        font-weight: bold;
+        margin-top: 100px;
+        margin-left: 100px;
+      }
+      a {
+        float: right;
+        margin-right: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="quote">-Берись и делай!</div>
+    <a href="javascript:;">Еще совет</a>
+    <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="jquery.fittext.js"></script>
+    <script type="text/javascript">
+      jQuery( document ).ready(function() {
+
+        var quotes = [
+          "Берись и делай!",
+          "Делай!",
+          "Делай, блин!"
+        ];
+
+        jQuery("#quote").html(quotes[Math.floor(Math.random()*quotes.length)]);
+
+        jQuery("#quote").fitText(1.2, { minFontSize: '20px', maxFontSize: '80px' });
+
+        jQuery("a").click(function(){
+          jQuery("#quote").html(quotes[Math.floor(Math.random()*quotes.length)]);
+        });
+      });
+    </script>
+  </body>
+</html>
